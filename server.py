@@ -24,6 +24,11 @@ def home():
 def download():
     return send_from_directory(directory="static",path="assets/res/resume.pdf")
 
+@app.route("/secret")
+def secret():
+    return send_from_directory(directory="static",path="assets/secret/secret.mp3")
+
+
 @app.route('/',methods=["POST","GET"])
 def contact():
     if request.method == "POST":
