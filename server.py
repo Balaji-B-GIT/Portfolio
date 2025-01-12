@@ -5,7 +5,10 @@ import smtplib
 
 load_dotenv("C:/Python/Environmental variables/.env")
 my_mail = "sampleforpythonmail@gmail.com"
-password = os.getenv("smtp_app_password")
+# run locally, you need to install dot env "pip install python-dotenv" and uncomment below code.
+# password = os.getenv("smtp_app_password")
+# for hosting online, use below line.
+password = os.environ.get("APP_PASSWORD")
 
 app = Flask(__name__)
 
