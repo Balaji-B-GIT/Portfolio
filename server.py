@@ -3,7 +3,7 @@ from dotenv import load_dotenv
 from flask import Flask, render_template, request, url_for, redirect, send_from_directory
 import smtplib
 
-load_dotenv("C:/Python/Environmental variables/.env")
+# load_dotenv("C:/Python/Environmental variables/.env")
 my_mail = "sampleforpythonmail@gmail.com"
 # run locally, you need to install dot env "pip install python-dotenv" and uncomment below code.
 # password = os.getenv("smtp_app_password")
@@ -11,6 +11,9 @@ my_mail = "sampleforpythonmail@gmail.com"
 password = os.environ.get("APP_PASSWORD")
 
 app = Flask(__name__)
+# for hosting online, use below line.
+# If 404 error occurs, change the below secret key
+app.config['SECRET_KEY'] = os.environ.get('FLASK_KEY')
 
 @app.route('/')
 def home():
