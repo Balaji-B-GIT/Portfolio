@@ -2,6 +2,7 @@ import os
 from dotenv import load_dotenv
 from flask import Flask, render_template, request, url_for, redirect, send_from_directory
 import smtplib
+import gunicorn
 
 # load_dotenv("C:/Python/Environmental variables/.env")
 my_mail = "sampleforpythonmail@gmail.com"
